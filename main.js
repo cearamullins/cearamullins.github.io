@@ -2,7 +2,7 @@
 
 window.onload = function () {
     console.log("Loading the page");
-    document.body.innerHTML = testing();
+    //document.body.innerHTML = testing();
 }
 
 function testing() {
