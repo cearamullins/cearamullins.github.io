@@ -1,2 +1,2 @@
-# cearamullins.github.io
+# README
 Creating a personal website using Github pages.
