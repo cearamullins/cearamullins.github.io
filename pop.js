@@ -96,13 +96,13 @@ function addNavBar() {
 function pdfName(title, key){
     var pdf = title.replace(/[^a-zA-Z0-9]/ig, "");	
     var cleanPDF = pdf+"_"+key+".pdf";
-    return "./exhibitPDF/"+cleanPDF;
+    return "./"+cleanPDF;
 }
 
 function htmlName(title, key){
     var html = title.replace(/[^a-zA-Z0-9]/ig, "");
     var cleanHTML = html+"_"+key+".html";
-    return "./exhibitHTML/"+cleanHTML;
+    return "./"+cleanHTML;
 }
 
 function toggleNav() {
