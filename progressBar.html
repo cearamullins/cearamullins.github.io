@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<head>
+    <title>Progress Bar</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="./js/progress.js"></script>
+</head>
+<body>
+    <div id=header>
+        <h1>Open the form and submit an image to view the progress bar.</h1>
+        <button id="menu-btn" class="menu-btns btn btn-sm btn-primary" style="position:relative; vertical-align: middle; margin: auto" type="button" data-target="#uploadModal" data-toggle="modal">upload</button>
+    </div>
+
+    <div id=workspace>
+        <!-- Code for the modal -->
+        <div class="my-modal modal fade" id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="uploadModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="uploadModalLabel">Image Upload</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="localForm" action="./ajax.py" method="post" enctype="multipart/form-data">
+                        <div class="row" style="margin-bottom: 20px;">
+                            <div class="col">
+                                <input type="text" id="fileName" name="fileName" class="form-control" placeholder="(Optional) Enter a filename">
+                            </div>
+                        </div>
+                        <div class="row" style="margin-bottom: 20px; margin-left: 1px; margin-right: 1px">
+                            <div class="col custom-file">
+                                <input type="file" class="custom-file-input" style="margin: 20px" id="customUpload" name="currentForm">
+                                <label id=customUploadLabel class="custom-file-label" style="color: #6f757c;" for="customUpload">Choose an image</label>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="preview-area" style="width:200px; height:200px; position:relative; margin:auto; border-radius:5px; border:1px solid #cfd3d9;">
+                        <img id="preview-this" style="border-radius:4px; display:none; width:100%; height:100%; position:relative; margin:auto">
+                        <svg id="noimage-svg" style="display:flex; position:relative; opacity: 0.9; margin-top: 60px; margin-left: 77px;" width="2.5em" height="2.5em" viewBox="0 0 16 16" class="bi bi-card-image" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M14.5 3h-13a.5.5 0 0 0-.5.5v9c0 .013 0 .027.002.04V12l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094L15 9.499V3.5a.5.5 0 0 0-.5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13zm4.502 3.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="closeUploadModal" type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
+                    <button type="submit" class="btn btn-primary">upload</button>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
