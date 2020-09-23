@@ -116,7 +116,6 @@ function toggleNav() {
         nav.style.display = "none";
         document.getElementById("open-nav").style.display = "block";
     }
-    
 }
 
 function view() {
@@ -332,8 +331,13 @@ function addCkeditor(textbox, i) {
 
     holder.style.display = "block";
 
+    /*
     holder.addEventListener("dblclick", function(e){
         e.preventDefault();
+        hideCkeditor(textbox, i);
+    })
+    ;*/
+    $(document).click(function(){
         hideCkeditor(textbox, i);
     });
 
